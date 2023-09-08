@@ -1,8 +1,6 @@
 [user]
         name = d-ishizuka
         email = vbstkaksa.0716@gmail.com
-[core]
-        excludesfile = /Users/ishizuka/.gitignore_global
 [commit]
         template = /Users/ishizuka/.stCommitMsg
 [alias]
