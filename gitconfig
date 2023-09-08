@@ -1,0 +1,79 @@
+[user]
+        name = d-ishizuka
+        email = vbstkaksa.0716@gmail.com
+[core]
+        excludesfile = /Users/ishizuka/.gitignore_global
+[commit]
+        template = /Users/ishizuka/.stCommitMsg
+[alias]
+  acm = commit -am
+  ca = commit --amend
+  cm = commit -m
+  cfu = commit --fixup
+  c = commit
+  plo = !git pull --rebase origin $(git symbolic-ref --short HEAD)
+  ps = push
+  psf = push --force-with-lease
+  pt = push --tags
+  ss = status -s
+  s = status
+  d = diff
+  df = diff
+  dc = diff --cached
+  dfc = diff --cached
+  pr = pull --rebase
+  prr = pull --rebase --prune
+  a = add
+  aa = add -A
+  b = branch
+  delete-branch = branch -D
+  ch = checkout
+  chb = checkout -b
+  sw = switch
+  swc = switch --create
+  swcf = switch --force-create
+  new-branch = swc
+  new-branch-force = swfc
+  crp = cherry-pick
+  fc = fetch
+  ft = fetch --tags
+  t = tag
+  rb = rebase
+  rst = restore
+  rsts = restore --staged
+  rstsw = restore --staged --worktree
+  rt = rst
+  rts = rsts
+  rtsw = rstsw
+  rt-s = rts
+  rt-sw = rtsw
+  sh = show
+  g = grep
+  fixup = commit --amend -C HEAD
+  topic-branch = “!f() { git-topic-branch }; f”
+  backup = “!f() { git-backup }; f”
+  pull--request = browse-remote --pr
+  release-branch = !git checkout -b release_$(date +%Y%m%d_%H%M)
+  release-tag = !git tag RELEASE_$(date +%Y%m%d_%H%M)
+  bn = !git branch --show-current
+  pso = !git push origin $(git bn)
+  ps- = “!f() { git push $1 $(git bn); }; f”
+  psfo = !git push --force-with-lease origin $(git bn)
+  psf- = “!f() { git push --force-with-lease $1 $(git bn); }; f”
+  show-default-branch = “!f() { git symbolic-ref --short refs/remotes/origin/HEAD | sed ‘s@^origin/@@‘; }; f”
+  checkout-default-branch = “!f() { git checkout $(git show-default-branch); }; f”
+  db = !git checkout-default-branch
+	untracked = ls-files --others --exclude-standard
+[grep]
+        lineNumber = true
+[pull]
+  rebase = true
+[push]
+  default = simple
+[rerere]
+  autoupdated = 1
+  enabled = 1
+[rebase]
+  autosquash = true
+[init]
+	defaultBranch = main
